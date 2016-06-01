@@ -12,6 +12,8 @@ etcd 2.3.6
 
 ## etcd配置:
 
+### etcd启动
+
 etcd启动命令:
 
 ```bash
@@ -20,12 +22,36 @@ etcd --advertise-client-urls 'http://192.168.15.232:2379' --listen-client-urls '
 
 需要确保 advertise-client-urls 是在正确的ip和端口上监听
 
-启动检查:
+### etcd检查
+
+* 本机检查:
+
+在etcd运行的机器上,检查启动情况:
 
 ```bash
 etcdctl member list
 ce2a822cea30bfca: name=default peerURLs=http://localhost:2380,http://localhost:7001 clientURLs=http://192.168.15.232:2379 isLeader=true
 ```
+
+检查功能是否正确,能否正确设置和获取
+```bash
+etcdctl mk key value
+etcdctl get key 
+value
+```
+
+* 远程检查
+
+在其他主机上,验证远程连接的正确性,是否可以正确设置和获取
+```bash
+./etcdctl -endpoints http://192.168.15.232:2379 get key
+value
+/etcdctl -endpoints http://192.168.15.232:2379 mk key2 value2
+value2
+./etcdctl -endpoints http://192.168.15.232:2379 get key2 
+value2
+```
+
 
 ## docker配置
 
