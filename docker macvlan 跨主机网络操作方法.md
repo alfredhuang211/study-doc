@@ -8,7 +8,7 @@
 
 * 主机上配置的eth0网口或者创建的vlan网口,均需要开启混杂模式,命令 `ip link set eth0 promisc on` `ip link set eth0.100 promisc on`
 
- ** 注意 ** : 如果不开启混杂模式,会导致macvlan网络无法访问外界,具体在不使用vlan时,表现为无法ping通路由,无法ping通同一网络内其他主机
+ **注意** : 如果不开启混杂模式,会导致macvlan网络无法访问外界,具体在不使用vlan时,表现为无法ping通路由,无法ping通同一网络内其他主机
 
 ## 搭建过程1-不使用vlan
 
@@ -36,19 +36,19 @@
 
  运行命令:
 
- `docker exec test101 ping 192.168.15.1` ping网关: ** 通 **
+ `docker exec test101 ping 192.168.15.1` ping网关: **通**
 
- `docker exec test101 ping test102` 使用容器名ping本主机容器: ** 通 **
+ `docker exec test101 ping test102` 使用容器名ping本主机容器: **通**
 
- `docker exec test102 ping 192.168.15.101` ping本主机容器: ** 通 **
+ `docker exec test102 ping 192.168.15.101` ping本主机容器: **通**
 
- `docker exec test101 ping 192.168.15.201` ping另一主机容器: ** 通 **
+ `docker exec test101 ping 192.168.15.201` ping另一主机容器: **通**
 
- `docker exec test101 ping test201` 使用容器名ping另一主机容器: ** 不通 **
+ `docker exec test101 ping test201` 使用容器名ping另一主机容器: **不通**
 
- `ping 192.168.15.101` 本主机ping本主机容器: ** 不通 **
+ `ping 192.168.15.101` 本主机ping本主机容器: **不通**
 
- `ping 192.168.15.201` 本主机ping另一主机容器: ** 通 **
+ `ping 192.168.15.201` 本主机ping另一主机容器: **通**
 
  主机2上测试获取相同结果.
 
@@ -82,22 +82,22 @@
 
  运行命令:
 
- `docker exec test100.101 ping 192.168.100.1` ping网关: ** 不通 **
+ `docker exec test100.101 ping 192.168.100.1` ping网关: **不通**
 
- `docker exec test100.101 ping 192.168.100.50` ping本地eth0.100地址: ** 不通 **
+ `docker exec test100.101 ping 192.168.100.50` ping本地eth0.100地址: **不通**
 
- `docker exec test100.101 ping 192.168.100.51` ping另一个主机的eth0.100地址, 通
+ `docker exec test100.101 ping 192.168.100.51` ping另一个主机的eth0.100地址:**通**
 
- `docker exec test100.101 ping 192.168.100.102` ping本主机容器: ** 通 **
+ `docker exec test100.101 ping 192.168.100.102` ping本主机容器: **通**
 
- `docker exec test100.101 ping 192.168.100.201` ping另一主机容器: ** 通 **
+ `docker exec test100.101 ping 192.168.100.201` ping另一主机容器: **通**
 
- `docker exec test100.101 ping test100.102` 使用容器名ping本主机容器: ** 通 **
+ `docker exec test100.101 ping test100.102` 使用容器名ping本主机容器: **通**
 
- `docker exec test100.101 ping test100.201` 使用容器名ping另一主机容器: ** 不通 **
+ `docker exec test100.101 ping test100.201` 使用容器名ping另一主机容器: **不通**
 
- `ping 192.168.100.101` 本主机ping本主机容器: ** 不通 **
+ `ping 192.168.100.101` 本主机ping本主机容器: **不通**
 
- `ping 192.168.100.201` 本主机ping另一主机容器: ** 通 **
+ `ping 192.168.100.201` 本主机ping另一主机容器: **通**
 
  主机2测试相同
