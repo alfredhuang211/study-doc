@@ -1,4 +1,4 @@
-# docker跨主机overlay网络组建方法:
+# docker跨主机overlay网络配置
 
 ## 环境说明:
  
