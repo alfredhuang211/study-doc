@@ -7,3 +7,5 @@
 [docker跨主机macvlan网络配置](docker跨主机macvlan网络配置.md)
 
 [docker跨主机ipvlan网络配置](docker跨主机ipvlan网络配置.md)
+
+[docker swarm mode 配置使用](docker swarm mode 配置使用.md)
