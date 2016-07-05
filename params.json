@@ -1,5 +1,5 @@
 {
-  "name": "Study-docker-doc",
+  "name": "docker学习记录",
   "tagline": "保存在学习docker过程中的各种记录",
   "body": "# docker学习记录\r\n\r\n保存在学习docker过程中的各种记录\r\n\r\n[docker跨主机overlay网络配置](docker跨主机overlay网络配置.md)\r\n\r\n[docker跨主机macvlan网络配置](docker跨主机macvlan网络配置.md)\r\n\r\n[docker跨主机ipvlan网络配置](docker跨主机ipvlan网络配置.md)\r\n\r\n[docker swarm mode 配置使用](docker swarm mode 配置使用.md)\r\n",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
