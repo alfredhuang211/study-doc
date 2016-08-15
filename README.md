@@ -9,3 +9,8 @@
 [docker跨主机ipvlan网络配置](docker跨主机ipvlan网络配置.md)
 
 [docker swarm mode 配置使用](docker swarm mode 配置使用.md)
+
+[kubernets 容器方式部署方法](kubernets 容器方式部署.md)
+
+[kube-deploy docker multinode部署方式分析](kube-deploy docker multinode部署方式分析.md)
+
