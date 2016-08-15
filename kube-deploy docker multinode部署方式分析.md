@@ -1,6 +1,6 @@
 ﻿# kube-deploy docker multinode部署方式分析
 
-标签： kubernets k8s kube-deploy 部署 容器
+标签： kubernetes k8s kube-deploy 部署 容器
 
 ---
 

@@ -1,6 +1,6 @@
-﻿# kubernets 容器方式部署
+﻿# kubernetes 容器方式部署
 
-标签： kubernets k8s 容器 安装部署
+标签： kubernetes k8s 容器 安装部署
 
 ---
 ## 部署环境
@@ -108,7 +108,7 @@ gcr.io/google_containers/flannel-amd64
 
 ### kubectl 下载安装
 
-从 kubernets 发行 release 中可以找到对应的 kubectl 可执行文件.将其放置到 master 中.
+从 kubernetes 发行 release 中可以找到对应的 kubectl 可执行文件.将其放置到 master 中.
 
 执行 `kubectl version`
 输出如下:
