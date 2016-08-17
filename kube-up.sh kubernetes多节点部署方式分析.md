@@ -48,8 +48,4 @@ export KUBERNETES_PROVIDER=ubuntu
 
 最终通过 kubectl cluster-info 输出集群信息,完成部署.
 
-
-
-
-
-
+![分析流程图](https://raw.githubusercontent.com/alfredhuang211/study-docker-doc/master/kube-up%E5%88%86%E6%9E%90.png)
