@@ -14,3 +14,5 @@
 
 [kube-deploy docker multinode部署方式分析](kube-deploy docker multinode部署方式分析.md)
 
+[kubernets 非容器方式多节点部署方法](kubernets 非容器方式多节点部署.md)
+
