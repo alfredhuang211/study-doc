@@ -48,6 +48,38 @@ Client Version: version.Info{Major:"1", Minor:"3", GitVersion:"v1.3.4", GitCommi
 Server Version: version.Info{Major:"1", Minor:"3", GitVersion:"v1.3.4", GitCommit:"dd6b458ef8dbf24aff55795baa68f83383c9b3a9", GitTreeState:"clean", BuildDate:"2016-08-01T16:38:31Z", GoVersion:"go1.6.2", Compiler:"gc", Platform:"linux/amd64"}
 ```
 
+### dashboard 安装
+通过如下命令可以完成 dashboard 的安装:
+`kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml`
+
+界面输出为:
+```bash
+deployment "kubernetes-dashboard" created
+You have exposed your service on an external port on all nodes in your
+cluster.  If you want to expose this service to the external internet, you may
+need to set up firewall rules for the service port(s) (tcp:32628) to serve traffic.
+
+See http://releases.k8s.io/release-1.3/docs/user-guide/services-firewalls.md for more details.
+service "kubernetes-dashboard" created
+```
+此时可以通过 kubectl 命令查看部署情况:
+```bash
+root@ubuntu:~# kubectl get deployments --namespace=kube-system
+NAME                   DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+kubernetes-dashboard   1         1         1            1           7m
+root@ubuntu:~# kubectl get po --namespace=kube-system
+NAME                                    READY     STATUS    RESTARTS   AGE
+kubernetes-dashboard-3825951078-c2w0i   1/1       Running   0          7m
+root@ubuntu:~# kubectl get rs --namespace=kube-system
+NAME                              DESIRED   CURRENT   AGE
+kubernetes-dashboard-3825951078   1         1         8m
+```
+
+dashboard 默认部署到 namespace 为 kube-system 下.
+
+此时可以通过 `http://{IP}:8080/ui` 访问dashboard, 链接会默认跳转到 `http://192.168.4.218:8080/api/v1/proxy/namespaces/kube-system/services/kubernetes-dashboard/#/workload`, 如果 dashboard 未安装或安装失败, 此页面会报响应错误.
+
+
 ### 说明
 在 kube-up.sh 执行过程中, 会有多次要求输入 master 主机和 worker 主机密码的过程. 可以通过配置 ssh 免密码登录来避免多次输入密码.
 > 在主机上使用 ssh-keygen 生成 public-key, 默认位置为 ~/.ssh/id_rsa.pub
