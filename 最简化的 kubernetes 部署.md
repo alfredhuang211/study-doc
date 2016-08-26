@@ -134,12 +134,12 @@ nohup ./hyperkube kubelet \
 启动后可通过 `./kubectl get po` 查看 pod 的启动情况.
 
 由于在启动 pod 时, 集群会拉取 pause 镜像,可以通过 `echo "220.255.2.153 www.gcr.io" >> /etc/hosts` `echo "220.255.2.153 gcr.io" >> /etc/hosts` 来确保拉取镜像能够成功.
-```
 
+## 注意
 
+由于这种方式部署,未考虑 kubernetes 的认证或 service account, 在拉起 kubernetes dashboard 的时候, 会使得 pod 处于 CrashLoopBackOff 的状态. docker logs 查看 dashboard 容器, 可以看到报错内容内有 "it has invalid apiserver certificates or service accounts configuration"
 
-```
-
+后续将进一步分析 apiserver certificates 和 service accounts 配置.
 
 
 

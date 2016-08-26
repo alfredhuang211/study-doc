@@ -18,3 +18,5 @@
 
 [kube-up 多节点部署方式分析](kube-up.sh kubernetes多节点部署方式分析.md)
 
+[kubernetes 最简部署方法](最简化的 kubernetes 部署.md)
+
