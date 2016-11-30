@@ -22,3 +22,5 @@
 
 [kubernetes 最简部署方法](最简化的 kubernetes 部署.md)
 
+[calico 部署及配置实现docker跨主机网络](calico 安装及配置实现docker跨主机网络.md)
+

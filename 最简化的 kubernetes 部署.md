@@ -49,6 +49,11 @@ nohup ./flanneld --etcd-endpoints=http://192.168.4.240:2379  --ip-masq  --iface=
 其中 etcd-endpoints 参数要求指向 etcd 的服务位置, iface 使用主机ip地址.
 
 此时使用 `ifconfig` 可以看到多了 flannel 的网络设备, 通过 `cat /run/flannel/subnet.env` 可以看到本机 flannel 分配的相关信息,其中 FLANNEL_SUBNET 需要用来设置为 docker 的 bip, mtu 可设置为 docker 的 mtu.
+FLANNEL_NETWORK=172.16.0.0/16
+FLANNEL_SUBNET=172.16.46.1/24
+FLANNEL_MTU=1450
+FLANNEL_IPMASQ=true
+
 
 通过 `ifconfig docker0 172.17.41.1/24` 命令, 将 FLANNEL_SUBNET 的值设置给 docker0.
 
