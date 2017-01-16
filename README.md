@@ -24,3 +24,6 @@
 
 [calico 部署及配置实现docker跨主机网络](calico 安装及配置实现docker跨主机网络.md)
 
+[kubeadm 部署多节点 kubernetes 集群](kubeadm 部署多节点 kubernetes 集群.md)
+
+[kubeadm 执行流程简单分析](kubeadm 部署多节点 kubernetes 执行流程分析.md)
