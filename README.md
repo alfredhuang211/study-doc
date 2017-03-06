@@ -27,3 +27,6 @@
 [kubeadm 部署多节点 kubernetes 集群](kubeadm 部署多节点 kubernetes 集群.md)
 
 [kubeadm 执行流程简单分析](kubeadm 部署多节点 kubernetes 执行流程分析.md)
+
+[基于jenkins和kubernetes的ci工作流](基于jenkins和kubernetes的ci工作流.md)  本文为dockerone社区分享内容 
+
