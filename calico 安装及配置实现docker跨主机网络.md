@@ -94,7 +94,7 @@ fd80:24e2:f998:72d6::/64
       enabled: true
     nat-outgoing: true
 ```
-执行命令 `./calicoctl create -f calico.yaml` 创建此 ip pool，然后通过 `./calicoctl delete ipPool 192.168.0.0./16` 删除原来的 ip pool。
+执行命令 `./calicoctl create -f calico.yaml` 创建此 ip pool，然后通过 `./calicoctl delete ipPool 192.168.0.0/16` 删除原来的 ip pool。
 
 ## 网络创建
 由于 calico 已经对接了 docker 的 CNM 网络模型，因此网络的创建，删除等管理动作，都可以在 docker 内完成。
